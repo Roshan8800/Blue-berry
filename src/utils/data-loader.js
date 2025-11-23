@@ -9,7 +9,7 @@ export async function loadAllVideos(maxVideos = null) {
     }
 
     try {
-        const response = await fetch('data/full_data.json', {
+        const response = await fetch('full_data.json', {
             timeout: 10000 // 10 second timeout
         });
 
@@ -23,7 +23,9 @@ export async function loadAllVideos(maxVideos = null) {
             throw new Error('Invalid data format: expected array');
         }
 
-        allVideos = data.map((video, index) => {
+        // Limit to first 1000 videos for performance
+        const limitedData = data.slice(0, 1000);
+        allVideos = limitedData.map((video, index) => {
             if (!video || !video.embed) {
                 console.warn(`Skipping invalid video at index ${index}`);
                 return null;
@@ -47,7 +49,7 @@ export async function loadAllVideos(maxVideos = null) {
             throw new Error('No video data could be loaded. Please try refreshing the page.');
         }
 
-        console.log(`Loaded ${allVideos.length} videos from data/full_data.json`);
+        console.log(`Loaded ${allVideos.length} videos from full_data.json`);
         return maxVideos ? allVideos.slice(0, maxVideos) : allVideos;
     } catch (error) {
         console.error('Error loading data/full_data.json:', error);

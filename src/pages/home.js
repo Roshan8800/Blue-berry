@@ -39,16 +39,10 @@ document.addEventListener('DOMContentLoaded', async () => {
         console.error('Error loading video data:', error);
         showToast('error', 'Failed to Load Videos', error.message);
 
-        // Fallback to placeholder videos
-        videos = [
-            { title: 'Video 1', thumbnail: 'https://source.unsplash.com/random/400x225/?girl' },
-            { title: 'Video 2', thumbnail: 'https://source.unsplash.com/random/400x225/?woman' },
-        ];
-
         // Show error message in UI
         const errorMsg = document.createElement('div');
         errorMsg.style.cssText = 'grid-column: 1 / -1; text-align: center; color: #dc3545; padding: 1rem;';
-        errorMsg.textContent = 'Unable to load video content. Showing sample videos instead.';
+        errorMsg.textContent = 'Unable to load video content. Please check your connection and try again.';
         trendingGrid.parentNode.insertBefore(errorMsg, trendingGrid);
     }
 

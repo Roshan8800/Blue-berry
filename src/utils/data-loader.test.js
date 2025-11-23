@@ -45,7 +45,7 @@ describe('data-loader', () => {
 
             const videos = await loadAllVideos();
 
-            expect(fetch).toHaveBeenCalledWith('data/full_data.json', { timeout: 10000 });
+            expect(fetch).toHaveBeenCalledWith('full_data.json', { timeout: 10000 });
             expect(videos).toHaveLength(2);
             expect(videos[0]).toEqual({
                 id: '0',

@@ -148,11 +148,8 @@ document.addEventListener('DOMContentLoaded', async () => {
         console.error('Error loading video data:', error);
         showToast('error', 'Failed to Load Videos', error.message);
 
-        // Fallback to placeholder videos
-        videos = [
-            { title: 'Video 1', thumbnail: 'https://source.unsplash.com/random/400x225/?girl' },
-            { title: 'Video 2', thumbnail: 'https://source.unsplash.com/random/400x225/?woman' },
-        ];
+        // No fallback videos for production
+        videos = [];
     }
 
     const populateGrid = (container, items) => {

@@ -437,7 +437,8 @@ class NavigationDrawer extends HTMLElement {
         }
     }
 
-    connectedCallback() {
+    async connectedCallback() {
+        await i18n.init();
         this.setAttribute('aria-hidden', 'true');
         this.languageSelect.value = i18n.getLanguage();
         this.updateTexts();

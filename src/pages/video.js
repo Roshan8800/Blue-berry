@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     // Load video data from full_data.json
     let videos = [];
     try {
-        const response = await fetch('data/full_data.json');
+        const response = await fetch('full_data.json');
         const data = await response.json();
         videos = data.map((video, idx) => ({
             id: `${idx}`,

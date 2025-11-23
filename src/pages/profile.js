@@ -6,8 +6,7 @@ import { getVideosByIds, getVideoById } from '../utils/data-loader.js';
 import '../components/toast.js';
 import '../components/loading-spinner.js';
 
-// Assume video data is available, perhaps from a global or imported
-// For now, placeholder functions
+// Profile page functionality
 
 let currentUser = null;
 

@@ -54,6 +54,7 @@ class SearchBar extends HTMLElement {
     }
 
     async connectedCallback() {
+        await i18n.init();
         this.render();
         this.loadSuggestions();
         this.setupEventListeners();

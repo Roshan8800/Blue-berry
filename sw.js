@@ -7,7 +7,7 @@ const urlsToCache = [
   '/',
   '/index.html',
   '/offline.html',
-  '/data/full_data.json',
+  '/full_data.json',
   '/src/styles/main.css',
   '/src/components/video-thumbnail.js',
   '/src/components/category-grid.js',

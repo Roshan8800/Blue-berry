@@ -1137,3 +1137,5 @@ class VideoPlayer extends HTMLElement {
 }
 
 customElements.define('video-player', VideoPlayer);
+
+export { VideoPlayer };
